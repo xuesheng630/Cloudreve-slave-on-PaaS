@@ -5,7 +5,7 @@ if [ -f /workdir/*.tar.gz ]; then
     tar -zxf /workdir/*.tar.gz -C /workdir
     rm -f /workdir/*.tar.gz
 else
-    VERSION="$(curl -IkLs -o /tmp/NUL -w %{url_effective} https://github.com/cloudreve/cloudreve/releases/latest | grep -o "[^/]*$")"
+    VERSION="$(curl -IkLs -o /tmp/NUL -w %{url_effective} https://github.com/cloudreve/cloudreve/releases/3.8.0 | grep -o "[^/]*$")"
     wget -qO - https://github.com/cloudreve/Cloudreve/releases/download/${VERSION}/cloudreve_${VERSION}_linux_amd64.tar.gz | tar -zxf - -C /workdir
 fi
 
